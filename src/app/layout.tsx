@@ -1,8 +1,7 @@
 import "./globals.css";
 
 import { Providers } from "../contexts/theme-providers";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Link from "next/link";
+import { Toaster } from "@/components/ui/toaster"
 
 export default function RootLayout({
   children,
@@ -16,6 +15,7 @@ export default function RootLayout({
       >
         <Providers>
           {children}
+          <Toaster />
         </Providers>
       </body>
     </html>
