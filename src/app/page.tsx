@@ -1,12 +1,5 @@
-export default async function Home() {
-  const data = await fetch('https://dummyjson.com/carts')
-    .then((response) => response.json())
-    .then( (response) => console.log(response));
+import { redirect } from "next/navigation";
 
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <p>{}</p>
-    </div>
-  );
+export default function App() {
+  redirect("/login");
 }
