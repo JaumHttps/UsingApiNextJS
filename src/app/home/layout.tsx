@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function RootLayout({
@@ -20,6 +21,10 @@ export default function RootLayout({
           <Link className="hover:border-b border-primary" href="#">
             Contact
           </Link>
+          
+          <Button>
+            Sair
+          </Button>
         </div>
         <Avatar className="w-8 h-8">
           <AvatarImage src="https://github.com/shadcn.png" />

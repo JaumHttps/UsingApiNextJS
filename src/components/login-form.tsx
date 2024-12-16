@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { AuroraBackground } from "./ui/aurora-background"
 
-import ActionLogin from "@/app/login/action-login"
+import ActionLogin from "@/app/login/actions"
 
 import { RiAppleFill } from "react-icons/ri";
 import { FaGoogle } from "react-icons/fa";
@@ -88,7 +88,7 @@ export function LoginForm({
             </div>
           </form>
           <div className="relative hidden bg-muted md:block">
-            <AuroraBackground className="absolute -top-32 left-0 right-0 bottom-0 bg-background z-0">
+            <AuroraBackground className="absolute -top-52 left-0 right-0 bottom-0 bg-background z-0">
               <h2 className="text-2xl font-bold text-center text-white z-10">
                 Conheça nossa comunidade
                 <br />

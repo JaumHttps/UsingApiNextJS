@@ -1,6 +1,7 @@
 'use server'
 
 import { cookies } from "next/headers"
+import { redirect } from "next/navigation"
 
 interface userProps {
   accessToken: string
@@ -15,7 +16,7 @@ interface userProps {
   message: string
 }
 
-export default async function ActionLogin (prevState: any, formData : FormData){
+export default async function ActionLogin (formData : FormData){
   const username = formData.get('username') 
   const password = formData.get('password') 
 
@@ -32,7 +33,7 @@ export default async function ActionLogin (prevState: any, formData : FormData){
   if (userData.message === 'Invalid credentials') {
     cookieStore.set('StatusCredentials', 
       JSON.stringify({error: true, msg: "Login inválido"}), {
-      expires: new Date(Date.now() + 10 * 300) // 10 seconds
+      expires: new Date(Date.now() + 10 * 300) 
     })
 
     console.log('Please enter valid credentials')
@@ -42,7 +43,9 @@ export default async function ActionLogin (prevState: any, formData : FormData){
 
     cookieStore.set('StatusCredentials', 
       JSON.stringify({error: false, msg: "Login feito com sucesso!"}), {
-      expires: new Date(Date.now() + 10 * 300) // 10 seconds
+      expires: new Date(Date.now() + 10 * 300) 
     })
+
+    redirect("/home");
   }
 }
