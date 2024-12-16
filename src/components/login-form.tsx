@@ -19,7 +19,7 @@ export function LoginForm({
 }: React.ComponentProps<"div">) {
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card className="overflow-hidden">
+    fetchSession()<Card className="overflow-hidden">
         <CardContent className="grid p-0 md:grid-cols-2">
           <form action={ActionLogin} className="p-6 md:p-8">
             <div className="flex flex-col gap-6">
@@ -88,7 +88,7 @@ export function LoginForm({
             </div>
           </form>
           <div className="relative hidden bg-muted md:block">
-            <AuroraBackground className="absolute -top-52 left-0 right-0 bottom-0 bg-background z-0">
+            <AuroraBackground className="absolute right-0 left-0 h-full bg-background z-0">
               <h2 className="text-2xl font-bold text-center text-white z-10">
                 Conheça nossa comunidade
                 <br />
